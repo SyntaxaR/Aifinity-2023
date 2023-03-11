@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Model.ai AWS S3 TEST - STEMazon</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        :root {
+            /* color for nav bar */
+            --clr-primary-hover: #29e6a7;
+            --clr-gray100: #f0f7f8;
+            --flr-gray200: #cfd8dc;
+
+
+            /* color for page 2*/
+            --clr-primary: #FF9900;
+            --clr-graylight: #f3f3f3;
+            --clr-graymed: #c4c4c4;
+
+            /* border radius for nav bar */
+            -radius: 0.2rem;
+            /* border radius for page 2*/
+            --border-radius: 0.5rem;
+        }
+
+        *, *:before, *:after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--clr-graylight);
+            line-height: 1.5;
+        }
+
+        .nav-list {
+            background: white;
+            box-shadow: 0px 0px 10px var(--clr-gray200);
+            margin: 0;
+            padding: 1rem 0;
+            border-radius: var(--radius);
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .nav-item {
+            list-style: none;
+            margin-right: 2rem;
+        }
+
+        .nav-item a {
+            text-decoration: none;
+            color: black;
+            transition:all 200ms ease-in;
+        }
+
+        .nav-item a:hover {
+            color: var(--clr-primary-hover);
+        }
+
+        .nav-item:first-child {
+            margin-right: auto;
+            margin-left: 2rem;
+        }
+
+        .btn-primary {
+            font-family: "Playfair Display", serif;
+            font-size: 1rem;
+            background: var(--clr-primary);
+            border: none;
+            outline: none;
+            border-radius: var(--radius);
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            transition: all 200ms ease-in;
+        }
+
+        .btn-primary:hover {
+            background: var(--clr-primary-hover);
+        }
+
+        .container-search {
+            margin: 10rem;  
+            min-height: 100vh;
+            padding: 5%;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container-search h1 {
+            text-align: center;
+            color: #000000;
+            font-size: 160px;
+        }
+
+        .container-search h3 {
+            text-align: center;
+            color: #000000;
+            font-size: 40px;
+        }
+
+        .container-search form {
+            margin-top: 15%;
+            margin-left: 12%;
+        }
+
+        .search-bar {
+            width: 100%;
+            max-width: 700px;
+            background: rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            border-radius: 60px;
+            padding: 10px 20px;
+            backdrop-filter: blur(4px) saturate(180%);
+        }
+
+        .search-bar input {
+            background-color: #FF9900;
+            flex: 1;
+            outline: none;
+            border-radius: 25px;
+            padding: 24px 20px;
+            font-size: 20px;
+            width: 200px;
+            height: 15px;
+            color: #cac7ff;
+        }
+
+        ::placeholder {
+            color: #000000;
+        }
+
+        .search-bar button img {
+            width: 25px;
+        }
+
+        .search-bar button {
+            border: 0;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            background: #58629b;
+            cursor: pointer;
+        }
+
+        main {
+            margin: 2rem;
+        }
+
+        h1 {
+            text-align: center;  
+            margin: 3rem;
+        }
+
+        h3 {
+            text-align: center;
+            margin:1rem;
+        }
+
+        .wrapper {
+            counter-reset: number;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 4rem, 0;
+        }
+
+        .container {
+            box-shadow: 0px 0px 20px var(--clr-graymed);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            width: 300px;
+            margin: 0 0.5rem 4rem;
+            background-color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        .container::before {
+            counter-increment: number;
+            content: counter(number);
+            width: 4rem;
+            height: 4rem;
+            background: var(--clr-primary);
+            position: absolute;
+            display: block;
+            border-radius: 50%;
+            top: -2rem;
+            left: 7.4rem;
+            font-size: 3rem;
+            font-weight: bold;
+            line-height: 3rem;
+        }
+
+        .title {
+            margin: 2rem 0 1rem 0;
+        }
+
+        .container-footer {
+            max-width: 1170px;
+            margin: auto;
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .footer {
+            background-color: #24262b;
+            padding: 70px 0;
+        }
+
+        .footer-col {
+            width: 25%;
+            padding: 0 15px;
+        }
+
+        .footer-col h4 {
+            font-size: 18px;
+            color: #ffffff;
+            text-transform: capitalize;
+            margin-bottom: 35px;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .footer-col h4::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            background-color: #e91e63;
+            height: 2px;
+            box-sizing: border-box;
+            width: 50px ;
+        }
+
+        .footer-col ul li:not(:last-child) {
+            margin-bottom: 10px;
+        }
+        .footer-col ul li a {
+            font-size: 16px;
+            text-transform: capitalize;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 300;
+            color: #bbbbbb;
+            display: block;
+            transition: all 0.3s ease;
+        }
+
+        .footer-col ul li a:hover {
+            color: #ffffff;
+            padding-left: 8px;
+        }
+
+        .footer-col .social-links a{
+            display: inline-block;
+            height: 40px;
+            width: 40px;
+            background-color: rgba(255, 255, 255, 0, 2);
+            margin: 0 10px 10px 0;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 50%;
+            color: #ffffff;
+            transition: all 0.5s ease;
+        }
+
+        .footer-col .social-links a:hover {
+            color: #24262b;
+            background-color: #ffffff;
+        }
+
+        /* responsive */
+        @media(max-width: 767px) {
+            .footer-col {
+                width: 50%;
+                margin-bottom: 30px;
+            }
+        }
+
+        @media(max-width: 574px) {
+            .footer-col {
+                width: 100%;
+            }
+        }
+    </style>
+    <link rel="stylesheet" type="text-css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    <script src="https://kit.fontawesome.com/8071ec970f.js" crossorigin="anonymous"></script>
+    <link href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <ul class="nav-list">
+            <li class="nav-item">
+                <a href="#"><i class="fa-thin fa-send-back">Model.ai</i></a>
+            </li>
+            <li class="nav-item">
+                <a href="#">About</a>
+            </li>
+            <li class="nav-item">
+                <a href="#">Work</a>
+            </li>
+            <li class="nav-item">
+                <a href="#">Contact</a>
+            </li>
+            <li class="nav-item">
+                <button class="btn-primary">Donate</button>
+            </li>
+        </ul>
+    </nav>
+    <main>
+        <div class="container-search">
+            <h1>Model.ai</h1>
+            <h3>You search and we model for you to print </h3>
+            <form action="https://www.google.com/search" method="get" class="search-bar">
+                <input type="text" placeholder="search anything" name="q">
+                <button type="submit"><img src="images/search.png"></button>
+            </form>
+        </div>
+
+        <h1>How to optain a 2D model in seconds?</h1>
+        <div class="wrapper">
+            <div class="container">
+                <h2 class="title">Search and choose</h2>
+                <p class="description">First, enter what you want to look for as if you are using a search engine. Among the images offered to you, choose the one(s) that you would prefer.</p>
+            </div>
+
+            <div class="container">
+                <h2 class="title">Remove background and generate model</h2>
+                <p class="description">Our tool automatically removes background from the selected image(s) and generates a suitable 2D model based on the details in the selected image(s)</p>
+            </div>
+
+            <div class="container">
+                <h2 class="title">Print your model</h2>
+                <p class="description">Connect your device to a printer and click ‘Print’ to print the 2D model generated.</p>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="container-footer">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>Free tools</h4>
+                    <ul>
+                        <li><a href="#"></a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Free apps</h4>
+                    <ul>
+                        <li><a href="#">web app</a></li>
+                        <li><a href="#">iphone app</a></li>
+                        <li><a href="#">android app</a></li>
+                        <li><a href="#">API (developers)</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Help & Legal</h4>
+                    <ul>
+                        <li><a href="#">Help center</a></li>
+                        <li><a href="#">Facebook community</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                        <li><a href="#">Privacy policy </a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Follow us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
