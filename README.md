@@ -16,9 +16,13 @@ Javascript (Vue.js 3.0 Framework)
 Python (Flask Framework)
 Python (Pytorch, Opencv, etc. for ML)
 
+## Screenshots
+
+
+
 ## Get Started
 
-Go to our [Model.ai]() official website, enter the your search text and patiently wait for the images
+Go to our [Model.ai](http://stemazon-s3.s3-website-ap-southeast-1.amazonaws.com) official website, enter the your search text and patiently wait for the images
 
 ## More Resources
 
