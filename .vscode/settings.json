@@ -1,0 +1,5 @@
+{
+    "python.analysis.extraPaths": [
+        "./src/u2net_backend"
+    ]
+}
