@@ -15,6 +15,4 @@ In this AI era, people have been discovering more and more potential of AI as an
 
 Go to our [Model.ai]() official website, enter the your search text and patiently wait for the images
 
-## Preparation
-
 ## More Resources
