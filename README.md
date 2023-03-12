@@ -23,7 +23,7 @@ Javascript (Vue.js 3.0 Framework)
 
 Python (Flask Framework)
 
-Python (Pytorch, Opencv, etc. for ML)
+Python (PyTorch, OpenCV, etc. for ML)
 
 ## Screenshots
 
