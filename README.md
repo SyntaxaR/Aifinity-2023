@@ -23,7 +23,8 @@ Python (Pytorch, Opencv, etc. for ML)
 
 ## Screenshots
 
-
+[Home](images/Home.png)
+[Bucket](images/Bucket.png) 
 
 ## Get Started
 
