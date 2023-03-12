@@ -11,6 +11,30 @@ In this AI era, people have been discovering more and more potential of AI as an
 <img src='images/ducklogo.png' width=800>
 </p>
 
+## Inspiration
+
+Inspired by the impressive, unfathomable features brought about by AWS in running digital systems in many entities, and hence the contribution of promising results, globally, we thought it would be an exciting idea to create an AWS-powered workable application that could realistically enhance the production of physical goods through printing and benefit most individuals in the long run.
+
+## What it does
+
+Check out our demo video which will show you explicitly how our platform works.
+
+## How we built it
+
+We built our platform in the form of a minimum viable product (MVP) using various services provided by AWS, such as API Gateway and Lambda. The frontend is built with VueJS, and the machine learning algorithm is U-2-Net built with PyTorch.
+
+## Challenges we ran into
+
+Given the 48-hour time limit coupled with extreme difficulties faced by our team in compiling our training models using SageMaker under the PyTorch machine learning framework despite our hard-fought efforts, we were unable to implement SageMaker, one of the useful AWS services, in time. We originally planned to utilise SageMaker during the 48 hours allowed to compile and optimise the training models, including for the purpose of optimising our search engine further.
+
+## Accomplishments that we're proud of
+
+We were able to devise and prototype a workable MVP using AWS services during the 48 hours allotted to us.
+
+## What we learned
+
+Teamwork and equitable distribution of workload amongst our four team members based on our strengths helped us brave the tough conditions and fierce competition from over 60 other teams, despite each of our members' commitments in other activities.
+
 ## Tech Stack
 
 AWS S3 Cloud Object Storage
@@ -34,9 +58,9 @@ Python (PyTorch, OpenCV, etc. for ML)
 
 Visit our official [model.ai](http://stemazon-s3.s3-website-ap-southeast-1.amazonaws.com) website, enter the your search text and wait patiently for the images to show up.
 
-## Future Prospect
+## What's next for model.ai
 
-* 2D image to label map generater + label map to 3D model generator = search-engine-like 3D model generator
+We plan to utilise more AWS services such as SageMaker to devise and implement new and smarter training models and features that enable us to generate more accurate and more optimal image search results based on user inputs. Similarly, we plan to be able to utilise those features that enable and facilitate the generation of 2D and 3D models based on data extracted from single or multiple images selected by users. Furthermore, we intend to partner and collaborate with businesses over the next few years in helping them increase the production of physical goods through our platform. This would in turn enable us to significantly reduce costs of physical goods that consumers need to pay during sales.
 
 ## Citation
 
