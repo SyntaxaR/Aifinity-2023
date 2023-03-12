@@ -12,8 +12,9 @@ In this AI era, people have been discovering more and more potential of AI as an
 AWS S3 Cloud Object Storage
 AWS Lambda Serverless Computing
 AWS SageMaker - the Machine Learning platform
-Vue 3.0 + HTML
-Python
+Javascript (Vue.js 3.0 Framework)
+Python (Flask Framework)
+Python (for ML)
 
 ## Get Started
 
