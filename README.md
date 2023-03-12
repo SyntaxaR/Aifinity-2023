@@ -13,7 +13,7 @@ In this AI era, people have been discovering more and more potential of AI as an
 
 ## Get Started
 
-### Step 1: Clone the repo as a local folder
+
 
 ## Preparation
 
