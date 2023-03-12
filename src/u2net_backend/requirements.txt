@@ -4,6 +4,8 @@ torch
 torchvision
 pillow==8.1.1
 opencv-python
-paddlepaddle
-paddlehub
-gradio
+flask
+json
+aiohttp
+asyncio
+boto3
