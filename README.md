@@ -37,7 +37,6 @@ Visit our official [model.ai](http://stemazon-s3.s3-website-ap-southeast-1.amazo
 
 ## Future Prospect
 
-<<<<<<< HEAD
 * 2D image to label map generater + label map to 3D model generator = search-engine-like 3D model generator
 
 ## Citation
