@@ -9,7 +9,12 @@ In this AI era, people have been discovering more and more potential of AI as an
 
 ## Prerequisites
 
+
+
 ## Get Started
+
+### Step 1: Clone the repo as a local folder
+
 ## Preparation
 
 ## More Resources
