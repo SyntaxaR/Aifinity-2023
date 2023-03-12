@@ -14,7 +14,7 @@ AWS Lambda Serverless Computing
 AWS SageMaker - the Machine Learning platform
 Javascript (Vue.js 3.0 Framework)
 Python (Flask Framework)
-Python (for ML)
+Python (Pytorch, Opencv, etc. for ML)
 
 ## Get Started
 
